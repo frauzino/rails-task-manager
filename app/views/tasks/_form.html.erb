@@ -1,0 +1,27 @@
+<%= form_with model: task do |f| %>
+  <div class="form">
+    <div class="label">
+      <%= f.label :title %>
+    </div>
+    <div class="input">
+      <%= f.text_field :title %>
+    </div>
+    <div class="label">
+      <%= f.label :details %>
+    </div>
+    <div class="input">
+      <%= f.text_field :details %>
+    </div>
+      <% if task.new_record?() %>
+      <%= "" %>
+      <% else %>
+    <div class="label">
+      <%= f.label :completed %>
+    </div>
+    <div class="checkbox">
+      <%= f.check_box :completed %>
+      <% end %>
+    </div>
+    <%= f.submit class: "submit btn" %>
+  </div>
+<% end %>
